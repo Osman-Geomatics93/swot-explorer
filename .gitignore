@@ -1,0 +1,9 @@
+node_modules/
+.output/
+.wxt/
+dist/
+*.log
+.env*
+# Downloaded SWOT granules and lookup results (large, regenerable)
+tools/out/
+__pycache__/

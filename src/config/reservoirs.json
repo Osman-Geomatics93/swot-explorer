@@ -1,0 +1,67 @@
+{
+  "source": "SWOT PLD v2.02 via SWOT_L2_HR_LakeSP_prior_D (LakeSP Version D), found with tools/find_pld_ids.py on 2026-11-07",
+  "hydrocron": { "feature": "PriorLake", "collection_name": "SWOT_L2_HR_LakeSP_D" },
+  "reservoirs": [
+    {
+      "id": "victoria-jinja", "name": "Lake Victoria / Jinja", "country": "Uganda",
+      "lake_id": "1720004433", "pld_name": "LAKE VICTORIA;KANYAMUSANGA SWAMP;MABAMBA", "grand_id": 4492,
+      "dam": [33.185, 0.444], "pld_ref_area_km2": 66697.3, "afr_passes": ["068", "499"],
+      "confidence": "high", "note": "Huge lake: each pass observes only part of it; use wse, not area, for monitoring."
+    },
+    {
+      "id": "gerd", "name": "GERD", "country": "Ethiopia",
+      "lake_id": "1720058403", "pld_name": "", "grand_id": null,
+      "dam": [35.093, 11.215], "pld_ref_area_km2": 220.5, "afr_passes": ["318", "499"],
+      "confidence": "medium",
+      "note": "Unnamed in PLD (prior extent is pre-filling, 220 km2). Observed WSE 600-607 m and up to 864 km2 extent reaching the dam. Parts of the filled reservoir may fall in LakeSP_unassigned; area_total underestimates true area."
+    },
+    {
+      "id": "tekeze", "name": "Tekeze", "country": "Ethiopia",
+      "lake_id": "1720045283", "pld_name": "", "grand_id": null,
+      "dam": [38.744, 13.348], "pld_ref_area_km2": 113.2, "afr_passes": ["568", "165"],
+      "confidence": "high", "note": "Unnamed in PLD. Observed WSE 1135-1144 m (FSL ~1140 m), extent 76-150 km2 upstream of the dam."
+    },
+    {
+      "id": "roseires", "name": "Roseires Dam", "country": "Sudan",
+      "lake_id": "1720054503", "pld_name": "ROSEIRES RESERVOIR;ER ROSIERES", "grand_id": 4483,
+      "dam": [34.387, 11.799], "pld_ref_area_km2": 533.6, "afr_passes": ["318", "221"],
+      "confidence": "high"
+    },
+    {
+      "id": "sennar", "name": "Sennar Dam", "country": "Sudan",
+      "lake_id": "1720058533", "pld_name": "", "grand_id": 4482,
+      "dam": [33.633, 13.547], "pld_ref_area_km2": 20.2, "afr_passes": ["221", "040"],
+      "confidence": "high", "note": "Matched by GRanD id 4482. Observed WSE ~423 m. PLD polygon covers only the reach near the dam."
+    },
+    {
+      "id": "jebel-aulia", "name": "Jebel Aulia Dam", "country": "Sudan",
+      "lake_id": "1720053693", "pld_name": "ALSHAWAL CITY;NIL;JEBEL AULIA RESERVOIR", "grand_id": 4480,
+      "dam": [32.490, 15.240], "pld_ref_area_km2": 870.0, "afr_passes": ["040", "249"],
+      "confidence": "high", "note": "Small PLD fragments 1720053653 / 1720053663 also carry GRanD 4480; ignore them."
+    },
+    {
+      "id": "upper-atbara-setit", "name": "Upper Atbara and Setit Dam Complex", "country": "Sudan",
+      "lake_id": "1720058243", "pld_name": "", "grand_id": null,
+      "dam": [36.260, 14.230], "pld_ref_area_km2": 287.2, "afr_passes": ["290", "193", "012", "499"],
+      "confidence": "medium", "note": "Unnamed in PLD. Observed WSE 511-521 m (FSL ~521 m), extent up to 175 km2 upstream of the dams."
+    },
+    {
+      "id": "khashm-el-girba", "name": "Khashm El Girba Dam", "country": "Sudan",
+      "lake_id": "1720054533", "pld_name": "KHASHM EL-GIRBA RESERVOIR", "grand_id": 4481,
+      "dam": [35.900, 14.925], "pld_ref_area_km2": 63.1, "afr_passes": ["012", "499"],
+      "confidence": "high"
+    },
+    {
+      "id": "merowe", "name": "Merowe Dam", "country": "Sudan",
+      "lake_id": "1720052653", "pld_name": "NILE", "grand_id": null,
+      "dam": [32.050, 18.668], "pld_ref_area_km2": 668.2, "afr_passes": ["040", "555", "249"],
+      "confidence": "high", "note": "PLD name is just 'NILE'. Observed WSE 286-299 m (FSL 300 m), extent up to 569 km2."
+    },
+    {
+      "id": "aswan", "name": "High Aswan Dam (Lake Nasser)", "country": "Egypt",
+      "lake_id": "1720056903", "pld_name": "NASSER;KHOR ADINDAN", "grand_id": 4478,
+      "dam": [32.877, 23.970], "pld_ref_area_km2": 5166.2, "afr_passes": ["555", "318"],
+      "confidence": "high", "note": "Not 1720055183 (GRanD 4477, 8 km2 - a separate small water body near the dam)."
+    }
+  ]
+}
