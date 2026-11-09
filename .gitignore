@@ -7,3 +7,12 @@ dist/
 # Downloaded SWOT granules and lookup results (large, regenerable)
 tools/out/
 __pycache__/
+
+# Credentials: never commit
+.netrc
+_netrc*
+*.pem
+*.key
+*.p12
+credentials*
+secrets*
