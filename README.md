@@ -1,5 +1,7 @@
 # SWOT Explorer
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24144882.svg)](https://doi.org/10.5281/zenodo.24144882)
+
 A browser extension for Chrome and Edge that searches, previews, clips and downloads
 [SWOT](https://swot.jpl.nasa.gov/) satellite hydrology data (rivers, lakes, reservoirs and ocean)
 without scripts or GIS software.
@@ -118,7 +120,13 @@ Please cite the SWOT collections you use; the extension adds their citations to 
 
 ## Citing SWOT Explorer
 
-See [CITATION.cff](CITATION.cff), or use **Cite this repository** on GitHub.
+Ibrahim, O. O. A. (2026). *SWOT Explorer: a browser extension to search, preview, clip and download
+SWOT satellite hydrology data* (Version 0.1.0) [Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.24144883
+
+The DOI above is for version 0.1.0. To cite the software in general, use
+https://doi.org/10.5281/zenodo.24144882, which always resolves to the latest version. The same
+metadata is in [CITATION.cff](CITATION.cff) and under **Cite this repository** on GitHub.
 
 ## License
 

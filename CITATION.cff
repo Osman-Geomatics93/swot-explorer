@@ -14,6 +14,14 @@ authors:
     affiliation: "Hydraulics Research Center, Sudan"
     orcid: "https://orcid.org/0009-0003-2594-6310"
 url: "https://chromewebstore.google.com/detail/ocgpjklebbhlgebfnnjhldppponhbage"
+doi: 10.5281/zenodo.24144882
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24144882
+    description: "All versions (always resolves to the latest)"
+  - type: doi
+    value: 10.5281/zenodo.24144883
+    description: "Version 0.1.0"
 version: 0.1.0
 date-released: "2026-11-09"
 license: MIT
