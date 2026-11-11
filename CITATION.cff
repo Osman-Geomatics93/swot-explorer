@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use SWOT Explorer in your work, please cite it as below."
+type: software
+title: "SWOT Explorer: a browser extension to search, preview, clip and download SWOT satellite hydrology data"
+abstract: >-
+  SWOT Explorer is a browser extension for Chrome and Edge that searches, previews, clips and
+  downloads Surface Water and Ocean Topography (SWOT) satellite data for rivers, lakes, reservoirs
+  and ocean. It builds quality-controlled water level, area and storage time series, grades their
+  reliability, and compares them with gauge records and independent altimetry.
+authors:
+  - family-names: "Ibrahim"
+    given-names: "Osman Osama Ahmed"
+    email: "osmangeomatics93@gmail.com"
+    affiliation: "Hydraulics Research Center, Sudan"
+    orcid: "https://orcid.org/0009-0003-2594-6310"
+url: "https://chromewebstore.google.com/detail/ocgpjklebbhlgebfnnjhldppponhbage"
+version: 0.1.0
+date-released: "2026-11-09"
+license: MIT
+repository-code: "https://github.com/Osman-Geomatics93/swot-explorer"
+keywords:
+  - SWOT
+  - satellite altimetry
+  - hydrology
+  - reservoirs
+  - remote sensing
+  - browser extension

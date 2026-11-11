@@ -7,6 +7,8 @@ dist/
 # Downloaded SWOT granules and lookup results (large, regenerable)
 tools/out/
 __pycache__/
+# Promo video project (own node_modules, rendered videos)
+video/
 
 # Credentials: never commit
 .netrc
