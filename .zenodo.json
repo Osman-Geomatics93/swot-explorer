@@ -1,0 +1,29 @@
+{
+  "upload_type": "software",
+  "title": "SWOT Explorer (source code)",
+  "description": "<p>Source code of SWOT Explorer, a browser extension for Chrome and Edge that searches, previews, clips and downloads Surface Water and Ocean Topography (SWOT) satellite hydrology data and builds quality-controlled water level, area and storage time series.</p><p><strong>This record archives software only. It is not a paper, preprint or manuscript.</strong> Any paper that describes SWOT Explorer is published separately and cites this record as its software archive.</p>",
+  "creators": [
+    {
+      "name": "Ibrahim, Osman Osama Ahmed",
+      "affiliation": "Hydraulics Research Center, Sudan",
+      "orcid": "0009-0003-2594-6310"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "SWOT",
+    "satellite altimetry",
+    "hydrology",
+    "reservoirs",
+    "remote sensing",
+    "browser extension",
+    "software"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Osman-Geomatics93/swot-explorer",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

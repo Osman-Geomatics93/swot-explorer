@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use SWOT Explorer in your work, please cite it as below."
 type: software
-title: "SWOT Explorer: a browser extension to search, preview, clip and download SWOT satellite hydrology data"
+title: "SWOT Explorer"
 abstract: >-
   SWOT Explorer is a browser extension for Chrome and Edge that searches, previews, clips and
   downloads Surface Water and Ocean Topography (SWOT) satellite data for rivers, lakes, reservoirs
