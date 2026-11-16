@@ -1,9 +1,9 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import type { Feature, Polygon } from 'geojson';
 import shp from 'shpjs';
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import { clipFeatures } from '@/clip/clipVector';
-import { isFill, parseShapefileXml, readShapefileXml } from '@/clip/fieldMeta';
+import { isFill, parseShapefileXml, readShapefileXml, type FieldMap } from '@/clip/fieldMeta';
 import { buildTable, dictionary } from '@/clip/table';
 import { findProduct } from '@/config/products';
 import { columnsOf, toCsv } from '@/lib/csv';
@@ -38,12 +38,18 @@ const area: Feature<Polygon> = {
   geometry: { type: 'Polygon', coordinates: [[[35.0, 10.7], [35.45, 10.75], [35.3, 11.25], [35.05, 11.2], [35.0, 10.7]]] },
 };
 
-describe.runIf(existsSync(REACH_ZIP))('CSV export of a real RiverSP reach granule', async () => {
-  const buf = readFileSync(REACH_ZIP);
-  const zip = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);
-  const fields = parseShapefileXml(readShapefileXml(zip)!);
-  const features = clipFeatures(await shp(zip), area, { name: 'SWOT_L2_HR_RiverSP_Reach_058_318_AF_x', cycle: '058', pass: '318', continent: 'AF', start: null }, findProduct('river-reach'), { cut: true, qcMode: 'flag', qcRule: DEFAULT_QC_RULE }, {}, fields);
-  const fc = { type: 'FeatureCollection' as const, features };
+describe.runIf(existsSync(REACH_ZIP))('CSV export of a real RiverSP reach granule', () => {
+  // Loaded in beforeAll: Vitest still runs the body of a skipped suite, so reading here would fail without the file.
+  let fields: FieldMap;
+  let features: ReturnType<typeof clipFeatures>;
+  let fc: { type: 'FeatureCollection'; features: typeof features };
+  beforeAll(async () => {
+    const buf = readFileSync(REACH_ZIP);
+    const zip = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);
+    fields = parseShapefileXml(readShapefileXml(zip)!);
+    features = clipFeatures(await shp(zip), area, { name: 'SWOT_L2_HR_RiverSP_Reach_058_318_AF_x', cycle: '058', pass: '318', continent: 'AF', start: null }, findProduct('river-reach'), { cut: true, qcMode: 'flag', qcRule: DEFAULT_QC_RULE }, {}, fields);
+    fc = { type: 'FeatureCollection', features };
+  });
 
   it('reads units, fill values and the Basic tag from the shapefile XML', () => {
     expect(fields.get('wse')).toMatchObject({ units: 'm', basic: true, fill: '-999999999999.0' });

@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import type { Feature, Polygon } from 'geojson';
 import shp from 'shpjs';
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon';
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import { clipFeatures } from '@/clip/clipVector';
 import { findProduct } from '@/config/products';
 import { DEFAULT_QC_RULE } from '@/qc/qualityControl';
@@ -18,10 +18,19 @@ const gerdBox: Feature<Polygon> = {
 const granule = { name: 'SWOT_L2_HR_LakeSP_Prior_057_499_AF_x', cycle: '057', pass: '499', continent: 'AF', start: null };
 const product = findProduct('lake-prior');
 
-describe.runIf(existsSync(ZIP))('clipFeatures on a real LakeSP_Prior granule', async () => {
-  const buf = readFileSync(ZIP);
-  const parsed = await shp(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
-  const all = (Array.isArray(parsed) ? parsed : [parsed]).flatMap((c) => c.features);
+const load = async (path: string) => {
+  const b = readFileSync(path);
+  return shp(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength));
+};
+
+describe.runIf(existsSync(ZIP))('clipFeatures on a real LakeSP_Prior granule', () => {
+  // Loaded in beforeAll: Vitest still runs the body of a skipped suite, so reading here would fail without the file.
+  let parsed: Awaited<ReturnType<typeof load>>;
+  let all: Feature[];
+  beforeAll(async () => {
+    parsed = await load(ZIP);
+    all = (Array.isArray(parsed) ? parsed : [parsed]).flatMap((c) => c.features);
+  });
 
   it('keeps only features touching the study area, tagged with granule info', () => {
     const out = clipFeatures(parsed, gerdBox, granule, product, { cut: false, qcMode: 'off', qcRule: DEFAULT_QC_RULE }, {});
@@ -76,11 +85,6 @@ function degreesOutside([x, y]: number[], ring: number[][]): number {
   }
   return best;
 }
-
-const load = async (path: string) => {
-  const b = readFileSync(path);
-  return shp(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength));
-};
 
 describe.runIf(existsSync(REACH_ZIP) && existsSync(ZIP))('cutting to a drawn polygon (real data)', () => {
   const opts = { qcMode: 'off' as const, qcRule: DEFAULT_QC_RULE };
