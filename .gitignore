@@ -9,6 +9,10 @@ tools/out/
 __pycache__/
 # Promo video project (own node_modules, rendered videos)
 video/
+# Manuscript drafts
+paper/
+# Built from joss/paper.md (locally with Docker, or by the "Draft paper PDF" workflow)
+joss/paper.pdf
 
 # Credentials: never commit
 .netrc
