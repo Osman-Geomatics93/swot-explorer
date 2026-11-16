@@ -22,8 +22,8 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.24144883
     description: "Version 0.1.0"
-version: 0.1.0
-date-released: "2026-11-09"
+version: 0.1.1
+date-released: "2026-11-16"
 license: MIT
 repository-code: "https://github.com/Osman-Geomatics93/swot-explorer"
 keywords:
